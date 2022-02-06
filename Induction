@@ -1,0 +1,118 @@
+
+  #include <math.h>
+
+  void main() {
+    char a[100];
+    float b[100], c[100], sum = 0, k = 1, sum2 = 0, burger[100], mult1 = 1, mult2 = 1, goal = 0, king = 0, hezka[100];
+    int i = 0, s = 1, t = 1, series, x = 0, minus = 0, mishima = 0, j, h, o, m = 0;
+    scanf("%s", a);
+    scanf("%d", & series);
+
+    if (a[i] == '-') {
+      i++;
+      minus = 1;
+
+    }
+    while (a[i] != 'N' && a[i] != '/') {
+
+      b[i] = (float) a[i] - 48.0;
+      s *= t;
+      t *= 10;
+      i++;
+      m = i;
+
+    }
+    if (a[i] == '/') {
+      x = 1;
+      h = 0;
+      o = 1;
+      s = 1;
+      i++;
+      while (a[i] != 'N') {
+
+        c[h] = (float) a[i] - 48.0;
+        o *= s;
+        s *= 10;
+        i++;
+        h++;
+        m = i;
+
+      }
+
+    }
+
+    if (minus == 1)
+      i = 1;
+    else
+      i = 0;
+    t /= 10;
+    while (t != 0) {
+      b[i] *= t;
+
+      t /= 10;
+      sum += b[i];
+      i++;
+
+    }
+    if (x == 1) {
+
+      for (i = 0; i <= h - 1; i++) {
+        c[i] *= o;
+        sum2 += c[i];
+        o /= 10;
+
+      }
+
+    }
+    if (minus == 1)
+      sum *= -1;
+    if (x == 1) {
+
+      sum /= sum2;
+    }
+
+    if (a[m + 1] == '^') {
+      king = 1;
+      m += 2;;
+      i = 0;
+      mult1 = 0.1;
+      while (a[m] != '=' && a[m] != '+' && a[m] != '-') {
+
+        burger[i] = (float) a[m] - 48.0;
+
+        mult1 *= 10;
+        m++;
+        i++;
+
+      }
+      i = 0;
+
+      while (mult1 >= 1) {
+        burger[i] *= mult1;
+
+        goal += burger[i];
+        mult1 /= 10;
+        i++;
+
+      }
+
+    }
+    if (king == 1) {
+      for (x = 1; x <= series; x++)
+
+        hezka[x] = pow(x, goal);
+
+      for (x = 1; x <= series; x++) {
+        printf("%f\n", sum * hezka[x]);
+
+      }
+
+    } else
+      for (x = 1; x <= series; x++) {
+        {
+          printf("\n%f\n", k * sum);
+          k++;
+
+        }
+      }
+  }

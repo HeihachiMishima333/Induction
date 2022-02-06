@@ -1,4 +1,4 @@
-
+//אינדוקציה
   #include <math.h>
 
   void main() {

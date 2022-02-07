@@ -1,27 +1,83 @@
 //אינדוקציה
+  #include<stdio.h>
   #include <math.h>
 
   void main() {
     char a[100];
-    float b[100], c[100], sum = 0, k = 1, sum2 = 0, burger[100], mult1 = 1, mult2 = 1, goal = 0, king = 0, hezka[100];
-    int i = 0, s = 1, t = 1, series, x = 0, minus = 0, mishima = 0, j, h, o, m = 0;
+    float b[100],bork=0.1,hot, c[100],calc=0, sum = 0, k = 1, sum2 = 0, burger[100], mult1 = 1, mult2 = 1, goal = 0, king = 0, hezka[100],total[100];
+    int i = 0,bazooka, s = 1, t = 1, series, x = 0, minus = 0, mishima = 0, j, h, o, m = 0,positive=1,katana=0,negative=0,mr=1,ninja=0,majima=0,counting=0;
     scanf("%s", a);
     scanf("%d", & series);
+for(x=0;x<series;x++)
+total[x]=0;
 
     if (a[i] == '-') {
       i++;
       minus = 1;
 
     }
-    while (a[i] != 'N' && a[i] != '/') {
+  
+    while(a[i]!='=')
+    {
+       
+        if(a[i]=='+')
+        i++;
+      
+        else if(a[i]=='-')
+    {
+        i++;
+        majima=1;
+        negative=1;
+            
+        }
+     
+    while (a[i] != 'N' && a[i] != '/'&&a[i]!='+'&&a[i]!='-'&&a[i]!='=') {
+   
+      b[katana] = (float) a[i] - 48.0;
 
-      b[i] = (float) a[i] - 48.0;
       s *= t;
       t *= 10;
       i++;
       m = i;
-
+      katana++;
+      counting++;
+ 
     }
+
+ if(a[i]!='N'&&a[i]!='/')
+ {
+    
+    
+hot=counting;
+ while(counting!=0)
+ {bork*=10;
+ counting--;
+ }
+
+ counting=hot;
+ for(bazooka=0;bazooka<counting;bazooka++)
+ {
+   
+     calc+=b[bazooka]*bork;
+    bork/=10;
+    
+     
+  
+     
+ }
+ if(minus==1)
+ calc*=-1;
+ else if(a[i-2]=='-')
+calc*=-1; 
+
+ for(x=1;x<=series;x++)
+ {
+ total[x-1]+=calc;
+ }
+     
+ }
+ else
+ {
     if (a[i] == '/') {
       x = 1;
       h = 0;
@@ -45,15 +101,17 @@
       i = 1;
     else
       i = 0;
+      katana=0;
     t /= 10;
     while (t != 0) {
-      b[i] *= t;
+      b[katana] *= t;
 
       t /= 10;
-      sum += b[i];
+      sum += b[katana];
       i++;
-
+katana++;
     }
+    
     if (x == 1) {
 
       for (i = 0; i <= h - 1; i++) {
@@ -72,25 +130,27 @@
     }
 
     if (a[m + 1] == '^') {
+
       king = 1;
       m += 2;;
       i = 0;
       mult1 = 0.1;
       while (a[m] != '=' && a[m] != '+' && a[m] != '-') {
 
-        burger[i] = (float) a[m] - 48.0;
+        burger[ninja] = (float) a[m] - 48.0;
 
         mult1 *= 10;
         m++;
         i++;
+        ninja++;
 
       }
       i = 0;
-
+ninja=0;
       while (mult1 >= 1) {
-        burger[i] *= mult1;
+        burger[ninja] *= mult1;
 
-        goal += burger[i];
+        goal += burger[ninja];
         mult1 /= 10;
         i++;
 
@@ -98,21 +158,62 @@
 
     }
     if (king == 1) {
+      
+        if(majima==1)
+        mr=-1;
       for (x = 1; x <= series; x++)
 
         hezka[x] = pow(x, goal);
 
       for (x = 1; x <= series; x++) {
-        printf("%f\n", sum * hezka[x]);
+        total[x-1]+=mr*(sum * hezka[x]);
 
       }
-
-    } else
-      for (x = 1; x <= series; x++) {
+    m--;
+        
+    } 
+    else
+    {
+      if(negative==1)
+      sum*=-1;
+   
+      for (x = 1; x <= series; x++) 
         {
-          printf("\n%f\n", k * sum);
-          k++;
+        
+          total[x-1]+=sum*x;
+       
 
         }
       }
+ }
+
+minus=0;
+x=0;
+if(a[i]!='=')
+{i=m;
+i++;
+
+}sum=0;
+sum2=0;
+mishima=0;
+s=1;
+t=1;
+king=0;
+goal=0;
+mult1=1;
+mult2=1;
+negative=0;
+   katana=0;    
+   mr=1;
+   ninja=0;
+   counting=0;
+   calc=0;
+    bork=0.1;
+        
+    }
+    
+    for (x = 1; x <= series; x++) 
+   printf("%f\n ",total[x-1]);
+ 
   }
+  

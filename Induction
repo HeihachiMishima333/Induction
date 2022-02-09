@@ -1,12 +1,29 @@
-//אינדוקציה
+/*אינדוקציה
+  
+  דוגמה לקלט: xN^k+B=
+
+ x יכול להיות מספר שלם או שבר חיובי או שלילי
+  
+N נכנס בה סדרת המספרים הטיבעיים  
+  
+  k הוא מספר טבעי
+  
+  B מספר שלם חיובי או שלילי
+  
+בקלט השיני מכניסים מספר טבעי והתוכנה מחשבת ממספר 1 עד מה שנכנס  */
+
+  
+  
   #include<stdio.h>
   #include <math.h>
 
   void main() {
     char a[100];
     float b[100],bork=0.1,hot, c[100],calc=0, sum = 0, k = 1, sum2 = 0, burger[100], mult1 = 1, mult2 = 1, goal = 0, king = 0, hezka[100],total[100];
-    int i = 0,bazooka, s = 1, t = 1, series, x = 0, minus = 0, mishima = 0, j, h, o, m = 0,positive=1,katana=0,negative=0,mr=1,ninja=0,majima=0,counting=0;
+    int i = 0,poker,bazooka, s = 1, t = 1, series, x = 0, minus = 0, mishima = 0, j, h, o, m = 0,positive=1,katana=0,negative=0,mr=1,ninja=0,majima=0,counting=0;
+   
     scanf("%s", a);
+
     scanf("%d", & series);
 for(x=0;x<series;x++)
 total[x]=0;
@@ -28,6 +45,7 @@ total[x]=0;
         i++;
         majima=1;
         negative=1;
+        poker=1;
             
         }
      
@@ -47,7 +65,7 @@ total[x]=0;
  if(a[i]!='N'&&a[i]!='/')
  {
     
-    
+   
 hot=counting;
  while(counting!=0)
  {bork*=10;
@@ -65,10 +83,12 @@ hot=counting;
   
      
  }
+
  if(minus==1)
  calc*=-1;
- else if(a[i-2]=='-')
+ if(poker==1)
 calc*=-1; 
+
 
  for(x=1;x<=series;x++)
  {
@@ -209,11 +229,11 @@ negative=0;
    counting=0;
    calc=0;
     bork=0.1;
-        
+        poker=0;
+        minus=0;
     }
     
     for (x = 1; x <= series; x++) 
-   printf("%f\n ",total[x-1]);
+   printf("%d= %f   ",x,total[x-1]);
  
   }
-  

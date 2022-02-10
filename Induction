@@ -20,7 +20,7 @@ N נכנס בה סדרת המספרים הטיבעיים
   void main() {
     char a[100];
     float b[100],bork=0.1,hot, c[100],calc=0, sum = 0, k = 1, sum2 = 0, burger[100], mult1 = 1, mult2 = 1, goal = 0, king = 0, hezka[100],total[100];
-    int i = 0,poker,bazooka, s = 1, t = 1, series, x = 0, minus = 0, mishima = 0, j, h, o, m = 0,positive=1,katana=0,negative=0,mr=1,ninja=0,majima=0,counting=0;
+    int i = 0,kazuya,poker,popo,bazooka, s = 1, t = 1, series, x = 0, minus = 0, mishima = 0, j, h, o, m = 0,positive=1,katana=0,negative=0,mr=1,ninja=0,majima=0,counting=0;
    
     scanf("%s", a);
 
@@ -36,8 +36,8 @@ total[x]=0;
   
     while(a[i]!='=')
     {
-       
-        if(a[i]=='+')
+
+       if(a[i]=='+')
         i++;
       
         else if(a[i]=='-')
@@ -94,7 +94,7 @@ calc*=-1;
  {
  total[x-1]+=calc;
  }
-     
+popo=1;
  }
  else
  {
@@ -176,6 +176,7 @@ ninja=0;
 
       }
 
+  printf("%c\n",a[i]);
     }
     if (king == 1) {
       
@@ -213,7 +214,10 @@ if(a[i]!='=')
 {i=m;
 i++;
 
-}sum=0;
+}
+if(popo==1)
+i--;
+sum=0;
 sum2=0;
 mishima=0;
 s=1;
@@ -231,6 +235,8 @@ negative=0;
     bork=0.1;
         poker=0;
         minus=0;
+    popo=0;
+     
     }
     
     for (x = 1; x <= series; x++) 
